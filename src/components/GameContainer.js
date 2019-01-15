@@ -11,12 +11,13 @@ class GameContainer extends React.Component{
                     [0],[0],[0],[0],[0],[0],[0],[0],
                     [0],[0],[0],[0],[0],[0],[0],[0],
                     [0],[0],[0],[0],[0],[0],[0],[0]
-               ]
+               ],
+        score: 64
     }
     render(){
         return(
             <div className="game-container">
-                {this.state.tiles.map(item => <div className="game-tile">{item[0]}</div> )}
+                {this.state.tiles.map(item => <div className="game-tile unknown"></div> )}
             </div>
         );
     }

@@ -26,6 +26,22 @@ html,body{
 
 /* Tile */
 .game-tile{
-    border: 1px solid #000;
+    border: 2px solid #000;
     text-align: center;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.game-tile.unknown{
+    background-image: url('/img/question.png');
+}
+
+.game-tile.hint{
+    background-image: url('/img/arrow.png');
+}
+
+.game-tile.diamond{
+    background-image: url('/img/diamond.png');
 }
