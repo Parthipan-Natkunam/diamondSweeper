@@ -3,4 +3,5 @@ import {render} from 'react-dom' ;
 
 import './css/style.css';
 
-render(<h1>React Inited</h1>,document.getElementById("app"));
+const gameContainer = (<div class="game-container"></div>);
+render(gameContainer,document.getElementById("app"));
