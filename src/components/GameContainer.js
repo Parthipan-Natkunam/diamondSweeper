@@ -39,19 +39,21 @@ class GameContainer extends React.Component{
         let tileStates = this.state.tiles.slice(); //slicing to prevent state mutation
         let diamondsFound = this.state.foundDiamonds;
         let currentScore = this.state.score;
+        let hint = {};
         if(!tileStates[tilePosition].isOpen){
             tileStates[tilePosition].isOpen = !tileStates[tilePosition].isOpen;
             currentScore--;
             if(tileStates[tilePosition].hasDiamond){ diamondsFound++; }
             else{
-                let hint = sweepFourVertices(tilePosition,tileStates);
-                console.log(hint);
+                hint.class  = sweepFourVertices(tilePosition,tileStates);
+                hint.index = tilePosition;
             }
         }
         this.setState({
             tiles: tileStates,
             foundDiamonds: diamondsFound,
-            score: currentScore
+            score: currentScore,
+            hint: hint
         });
     }
     render(){
@@ -69,7 +71,8 @@ class GameContainer extends React.Component{
                     {
                         Array(this.state.totalTiles).fill('0').map((item,index) => {
                             return(
-                                <Tile key={index} position={index} tileState={this.state.tiles[index]} clickHandler={this.changeOpenState.bind(this)}/>
+                                <Tile key={index} position={index} tileState={this.state.tiles[index]} 
+                                    clickHandler={this.changeOpenState.bind(this)} hint={this.state.hint}/>
                             ); 
                         })
                     }

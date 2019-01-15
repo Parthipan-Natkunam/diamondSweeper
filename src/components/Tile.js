@@ -5,11 +5,16 @@ class Tile extends React.Component{
         this.props.clickHandler(this.props.position);
     }
     render(){
-        let {tileState} = this.props;
+        let {tileState,hint,position} = this.props;
         let cssClasses = ["game-tile"];
         if(tileState){
-            if(tileState.isOpen && tileState.hasDiamond) {cssClasses.push(" diamond")}
-            else if(!tileState.isOpen) { cssClasses.push(" unknown")}
+            if(tileState.isOpen){
+                if(tileState.hasDiamond) {cssClasses.push(" diamond");}
+            }
+            else{ cssClasses.push(" unknown");}
+        }
+        if(hint && hint.index === position){
+            cssClasses.push(hint.class);
         }
         return(
             <div className= {cssClasses.join('')} onClick={this.callClickHandler.bind(this)}></div>

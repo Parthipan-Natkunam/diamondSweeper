@@ -6,19 +6,22 @@ function generateGameBoundryObject(){
         "right": Array(8).fill(8).map((item,index)=> (item*(index+1)) - 1)
     }
 }
+const bounds = generateGameBoundryObject();
 
 export function generateRandomNumber(maxLimit){
     return Math.floor(Math.random()*maxLimit);
 }
 
 export function sweepFourVertices(origIndex,tilesArr){
-    const boundries = generateGameBoundryObject();
+    const boundries = bounds;
+    let i = 0;
     let prevScannedQuads = {};
     if(boundries.right.indexOf(origIndex) > -1) {prevScannedQuads.right = origIndex}
     if(boundries.left.indexOf(origIndex) > -1) {prevScannedQuads.left = origIndex}
     if(boundries.top.indexOf(origIndex) > -1) {prevScannedQuads.top = origIndex}
     if(boundries.bottom.indexOf(origIndex) > -1) {prevScannedQuads.bottom = origIndex}
-    while(boundries.right.indexOf(prevScannedQuads.right) === -1 || boundries.left.indexOf(prevScannedQuads.left) === -1 || boundries.top.indexOf(prevScannedQuads.top) === -1 || boundries.bottom.indexOf(prevScannedQuads.bottom) === -1  ){
+   // while(boundries.right.indexOf(prevScannedQuads.right) === -1 || boundries.left.indexOf(prevScannedQuads.left) === -1 || boundries.top.indexOf(prevScannedQuads.top) === -1 || boundries.bottom.indexOf(prevScannedQuads.bottom) === -1  ){
+    while(i < 2402){
         // scan the right node
         if(boundries.right.indexOf(prevScannedQuads.right) === -1){
             let tileToRight = void 0;
@@ -27,7 +30,7 @@ export function sweepFourVertices(origIndex,tilesArr){
             }else{
                 tileToRight = origIndex + 1;
             }
-            if(tilesArr[tileToRight].hasDiamond){ return "hint-right";}
+            if(tilesArr[tileToRight].hasDiamond){ return " hint-right";}
             else{prevScannedQuads.right = tileToRight; }
         }
         //scan the left node
@@ -38,7 +41,7 @@ export function sweepFourVertices(origIndex,tilesArr){
             }else{
                 tileToLeft = origIndex - 1;
             }
-            if(tilesArr[tileToLeft].hasDiamond){ return "hint-left"}
+            if(tilesArr[tileToLeft].hasDiamond){ return " hint-left"}
             else{prevScannedQuads.left = tileToLeft; }
         }
         //scan the top node
@@ -49,7 +52,7 @@ export function sweepFourVertices(origIndex,tilesArr){
             }else{
                 tileToTop = origIndex - 7;
             }
-            if(tilesArr[tileToTop].hasDiamond){ return "hint-top"}
+            if(tilesArr[tileToTop].hasDiamond){ return " hint-up"}
             else{prevScannedQuads.left = tileToTop; }
         }
         //scan the bottom node
@@ -60,8 +63,9 @@ export function sweepFourVertices(origIndex,tilesArr){
             }else{
                 tileToBottom = origIndex + 7;
             }
-            if(tilesArr[tileToBottom].hasDiamond){ return "hint-bottom"}
+            if(tilesArr[tileToBottom].hasDiamond){ return " hint-down"}
             else{prevScannedQuads.bottom = tileToBottom; }
         }
+        i++;
     }
 }
