@@ -2,7 +2,7 @@ import React from 'react';
 
 import Tile from './Tile';
 
-import {generateRandomNumber} from '../Helpers';
+import {generateRandomNumber,sweepFourVertices} from '../Helpers';
 
 class GameContainer extends React.Component{
     state = {
@@ -43,6 +43,10 @@ class GameContainer extends React.Component{
             tileStates[tilePosition].isOpen = !tileStates[tilePosition].isOpen;
             currentScore--;
             if(tileStates[tilePosition].hasDiamond){ diamondsFound++; }
+            else{
+                let hint = sweepFourVertices(tilePosition,tileStates);
+                console.log(hint);
+            }
         }
         this.setState({
             tiles: tileStates,
