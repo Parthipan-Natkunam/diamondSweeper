@@ -22,6 +22,9 @@ React
 1. Fully Responsive.
 2. Built using CSS Grids.
 
+## Infra
+1. HMR and Minification are done through `react-scripts` package which contains the configurations similar to the one used in create-react-app scaffolder.
+
 ## Screenshts
 ### Gameplay
 <img src="readmeImages/shot1.png">
