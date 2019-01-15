@@ -36,9 +36,9 @@ class GameContainer extends React.Component{
         let currentScore = this.state.score;
         if(!tileStates[tilePosition].isOpen){
             tileStates[tilePosition].isOpen = !tileStates[tilePosition].isOpen;
+            currentScore--;
+            if(tileStates[tilePosition].hasDiamond){ diamondsFound++; }
         }
-        if(tileStates[tilePosition].hasDiamond){ diamondsFound++; }
-        else{ currentScore--; }
         this.setState({
             tiles: tileStates,
             foundDiamonds: diamondsFound,
@@ -46,16 +46,27 @@ class GameContainer extends React.Component{
         });
     }
     render(){
-        return(
-            <div className="game-container">
-                {
-                    Array(this.state.totalTiles).fill('0').map((item,index) => {
-                        return(
-                            <Tile key={index} position={index} tileState={this.state.tiles[index]} clickHandler={this.changeOpenState.bind(this)}/>
-                        ); 
-                    })
-                }
+        const scoreBox = (
+            <div className="game-overlay">
+                <div className="game-scorebox">
+                    <h3>You Found All The Diamonds!!!</h3>
+                    <h4>Score: {this.state.score}</h4>
+                </div>
             </div>
+        ); 
+        return(
+            <React.Fragment>
+                <div className="game-container">
+                    {
+                        Array(this.state.totalTiles).fill('0').map((item,index) => {
+                            return(
+                                <Tile key={index} position={index} tileState={this.state.tiles[index]} clickHandler={this.changeOpenState.bind(this)}/>
+                            ); 
+                        })
+                    }
+                </div> 
+                { this.state.foundDiamonds === 8 ? scoreBox : null}
+            </React.Fragment>
         );
     }
 }
