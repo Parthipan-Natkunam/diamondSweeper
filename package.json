@@ -4,13 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "react-scripts start",
+    "start": "serve --single ./build",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Parthipan-Natkunam/diamondSweeper.git"
   },
   "keywords": [],
+  "devDependencies": {
+    "react-scripts": "1.1.1"
+  },
+  "dependencies": {
+    "react": "^16.3.0-alpha.1",
+    "react-dom": "^16.3.0-alpha.1",
+    "serve": "^6.5.0"
+  },
   "author": "Parthipan Natkunam (http://parthipan.co.in/)",
   "license": "MIT",
   "bugs": {
