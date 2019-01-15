@@ -10,6 +10,14 @@ A short and simple game built with React
 
 **note:** The homepage property in the package.json file should be modified accordingly, for the build to work properly.
 
+## Tasks Implemented on the Assignment:
+1. All the requirements from the basic section (Part 1)
+2. All the requirements from the advanced section (Part 2)
+3. The following from the Bonus Section:
+   - Responsive UI
+   - Sematic HTML
+   - Build pipeline and asset minification with react-scripts package
+   - Hot reloading with react-scripts package.
 
 ## Assumptions Made:
 1. IE is not to be supported.
