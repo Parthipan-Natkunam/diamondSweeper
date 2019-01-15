@@ -13,7 +13,7 @@ A short and simple game built with React
 
 ## Assumptions Made:
 1. IE is not to be supported.
-2. App will be run on latest versions of the modern browser.
+2. App will be run on latest versions of modern browsers.
 
 ## Libraries Used:
 React
