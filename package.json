@@ -1,0 +1,20 @@
+{
+  "name": "diamondSweeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parthipan-Natkunam/diamondSweeper.git"
+  },
+  "keywords": [],
+  "author": "Parthipan Natkunam (http://parthipan.co.in/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Parthipan-Natkunam/diamondSweeper/issues"
+  },
+  "homepage": "https://github.com/Parthipan-Natkunam/diamondSweeper#readme"
+}
