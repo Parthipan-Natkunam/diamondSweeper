@@ -39,8 +39,20 @@ html,body{
     background-image: url('/img/question.png');
 }
 
-.game-tile.hint{
-    background-image: url('/img/arrow.png');
+.game-tile.hint-right{
+    background-image: url('/img/arrow-right.png');
+}
+
+.game-tile.hint-left{
+    background-image: url('/img/arrow-left.png');
+}
+
+.game-tile.hint-up{
+    background-image: url('/img/arrow-up.png');
+}
+
+.game-tile.hint-down{
+    background-image: url('/img/arrow-down.png');
 }
 
 .game-tile.diamond{
