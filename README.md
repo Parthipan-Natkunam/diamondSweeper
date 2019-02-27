@@ -10,32 +10,16 @@ A short and simple game built with React
 
 **note:** The homepage property in the package.json file should be modified accordingly, for the build to work properly.
 
-## Tasks Implemented on the Assignment:
-1. All the requirements from the basic section (Part 1)
-2. All the requirements from the advanced section (Part 2)
-3. The following from the Bonus Section:
-   - Responsive UI
-   - Sematic HTML
-   - Build pipeline and asset minification with react-scripts package
-   - Hot reloading with react-scripts package.
-
-## Assumptions Made:
-1. IE is not to be supported.
-2. App will be run on latest versions of modern browsers.
-
-## Libraries Used:
-React
-
-## UI Layout:
-1. Fully Responsive.
-2. Built using CSS Grids.
-
-## Infra
-1. HMR and Minification are done through `react-scripts` package which contains the configurations similar to the one used in create-react-app scaffolder.
-
 ## Screenshts
 ### Gameplay
 <img src="readmeImages/shot1.png">
 
 ### Winning Scenario
 <img src="readmeImages/shot2.png">
+
+## Library Used:
+React
+
+## UI Layout:
+1. Fully Responsive.
+2. Built using CSS Grids.
